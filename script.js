@@ -164,8 +164,7 @@ function getRandom(arr) {
 //Function for generating password
 function GeneratPass(){
 
-  var choices = passwordOptions()
-
+  var choices = passwordOptions();
 
   // Variable to store password as it's being concatenated
   var result = [];
