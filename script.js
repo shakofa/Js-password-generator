@@ -87,7 +87,7 @@ var specialChar = [
 
 
 //User inut variables
-var lenght;
+var length;
 var confirmNumericChar;
 var confirmUpperCase;
 var confirmLowerCase;
@@ -98,21 +98,25 @@ var confirmSpecialChar;
 function passwordOptions(){
 
   //ask for user input
+  do {
   var length = parseInt(prompt('How many Characters would you like your password?'));
 
 
   if(!length){
     alert('This needs a value.');
-    return;
   } 
-
+  } while(!length);
  
+
   if( length < 8 || length > 128){
     //Start user input prompts
     alert('password length must be more than 8 and less than 128.');
-    return;
-
+    
   }
+  while(length < 8 || length > 128){
+    var length = parseInt(prompt('How many Characters would you like your password?'));
+  }
+
 
 
   //User input variables that store boolean for inclusion of numeric and special Charecters and uppercase and lowercase letters
@@ -135,7 +139,7 @@ function passwordOptions(){
 
 // Object to store user input
 var userOption = {
-  lenght: length,
+  length: length,
   confirmSpecialChar: confirmSpecialChar,
   confirmUpperCase: confirmUpperCase,
   confirmLowerCase: confirmLowerCase, 
